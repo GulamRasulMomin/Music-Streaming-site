@@ -1,7 +1,7 @@
 # Music-Streaming-site
 This is a web-based music streaming platform.
 ## Description
-A seamless platform for users to explore, play, and manage music. Built using Python Flask & PostgreSQL. This is a web-based music streaming platform. It allows users to listen to, explore, and manage music.
+A seamless platform for users to explore, play, and manage music. Built using Python Flask & HTML, CSS,JS. This is a web-based music streaming platform. It allows users to listen to, explore, and manage music.
 ## Technology Stack
 - Frontend: HTML, CSS, JavaScript, Bootstrap
 - Backend: Python Flask
