@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(3, 3, 74);
+            width: 100%;
+            height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        .form_box {
+            background: rgb(0, 0, 0, 0.1);
+            width: 320px;
+            padding: 24px;
+            border-radius: 16px;
+            border: solid 5px rgb(255, 255, 255, 0.1);
+            backdrop-filter: blur (25px);
+            box-shadow: 0px 0px 30px 20px rgb(0, 0, 0, 0.1);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-title {
+            margin-bottom: 16px;
+        }
+        .input-box {
+            display: flex;
+            width: 100%;
+            position: relative;
+            margin-top: 20px;
+        }
+        .input-box input {
+            width: 100%;
+            padding: 10px 16px 10px 38px;
+            border-radius: 99px;
+            border: solid 3px transparent;
+            background: rgb(255, 255, 255, 0.1);
+            outline: none;
+            caret-color: white;
+            color: white;
+            font-weight: 500;
+            transition: 0.25s;
+        }
+        .input-box input:focus {
+            border: solid 3px rgb(255, 255, 255, 0.25);
+        }
+        .input-box input::placeholder {
+            color: rgb(255, 255, 255, 0.75);
+        }
+        .login-button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 10px 0;
+            background: #32CDD5;
+            border: none;
+            border-radius: 99px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            outline: transparent 3px solid;
+            transition: 0.1s;
+        }
+        .login-button:focus {
+            outline: #32CDD58A 3px solid;
+        }
+        .dont-have-an-account {
+            font-weight: normal;
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('login') }}" method="POST" class="form_box">
+        {% if error %}
+            <p style="color: red;">{{error}}</p>
+        {% endif %}
+        <h1 class="login-title">Login</h1>
+        <section class="input-box">        
+            <input type="email" name="email" placeholder="Enter User name or email" id="email">                       
+        </section>            
+        <section class="input-box">            
+            <input type="password" name="password" placeholder="Enter Password" id="password">        
+        </section>        
+        <button class="login-button" type="submit">Login</button>
+        <h5 class="dont-have-an-account">Don't have an account?<a href="{{url_for('signup')}}"><b>Register</b></a></h5>
+    </form>
+</body>
+</html>
+
+
